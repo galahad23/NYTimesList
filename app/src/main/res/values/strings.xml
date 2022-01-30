@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">NYTimesList</string>
+
+    <string name="article_generator">NYTimes Article Generator</string>
+    <string name="search_articles">Search Articles</string>
+    <string name="popular_text">Popular</string>
+    <string name="most_viewed">Most Viewed Articles</string>
+    <string name="most_emailed">Most Emailed Articles</string>
+    <string name="most_shared">Most Shared Articles</string>
+    <string name="shared_by_day">Shared in 1 day period</string>
+    <string name="shared_by_week">Shared in 1 week period</string>
+    <string name="shared_by_month">Shared in 1 month period</string>
+
+    <string name="search_text">Search</string>
+    <string name="search_artciles_here">Search articles here</string>
+    <string name="search_results">Articles</string>
+    <string name="no_results">No Search Results</string>
+    <string name="ok">OK</string>
 </resources>

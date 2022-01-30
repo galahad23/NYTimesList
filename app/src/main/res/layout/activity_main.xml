@@ -3,16 +3,112 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/tv_main_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/article_generator"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_search_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/search_text"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_main_title"/>
+
+            <TextView
+                android:id="@+id/tv_search_articles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/search_articles"
+                android:padding="16dp"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:drawableEnd="@drawable/ic_next"
+                android:background="@drawable/black_rect_bordered"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_search_title" />
+
+            <TextView
+                android:id="@+id/tv_popular_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/popular_text"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_search_articles"/>
+
+            <TextView
+                android:id="@+id/tv_most_viewed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/most_viewed"
+                android:padding="16dp"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:drawableEnd="@drawable/ic_next"
+                android:background="@drawable/black_rect_bordered"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_popular_title" />
+
+            <TextView
+                android:id="@+id/tv_most_shared"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/most_shared"
+                android:padding="16dp"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:drawableEnd="@drawable/ic_next"
+                android:background="@drawable/black_rect_bordered"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_most_viewed" />
+
+            <TextView
+                android:id="@+id/tv_most_emailed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/most_emailed"
+                android:padding="16dp"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:drawableEnd="@drawable/ic_next"
+                android:background="@drawable/black_rect_bordered"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_most_shared" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

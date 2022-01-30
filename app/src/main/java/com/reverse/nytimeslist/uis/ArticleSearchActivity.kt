@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.reverse.nytimeslist.AppUtil
 import com.reverse.nytimeslist.R
 import com.reverse.nytimeslist.api.ApiConstants
 import com.reverse.nytimeslist.api.ApiServices
@@ -43,15 +44,18 @@ class ArticleSearchActivity: AppCompatActivity(), View.OnClickListener {
                     ) {
                         val articles = response.body()!!.response!!.docs!!
                         val list = ArrayList<ListModel>()
-                        for (i in articles.indices) {
-                            list.add(
-                                ListModel(
-                                articles[i].headline!!.main,
-                                articles[i].pubDate,
-                                articles[i].webUrl
-                            )
-                            )
+                        if (!articles.isNullOrEmpty()) {
+                            for (i in articles.indices) {
+                                list.add(
+                                    ListModel(
+                                        articles[i].headline!!.main,
+                                        AppUtil.convertISODate(articles[i].pubDate!!),
+                                        articles[i].webUrl
+                                    )
+                                )
+                            }
                         }
+                        Paper.book().delete("LIST_MODEL")
                         Paper.book().write("LIST_MODEL", list)
                         startActivity(Intent(this@ArticleSearchActivity, SearchResultActivity::class.java))
                     }

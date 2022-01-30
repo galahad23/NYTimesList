@@ -23,7 +23,7 @@ class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), Vie
         listener = button
 
         itemView.tv_article_title.text = item.title
-        itemView.tv_article_date.text = AppUtil.convertISODate(item.date!!)
+        itemView.tv_article_date.text = item.date
         itemView.setOnClickListener(this)
     }
 }
